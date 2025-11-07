@@ -1,15 +1,8 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+/node_modules          # Dépendances JS (inutiles pour Laravel backend)
+/vendor                # Sera régénéré par composer install
+.env                   # Fichier avec vos mots de passe LOCAUX
+.git                   # Historique git (très lourd et inutile)
+storage/*.key          # Clés privées
+.phpunit.result.cache  # Cache de tests
 .git
 .gitignore
-.gitattributes
