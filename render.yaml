@@ -3,13 +3,14 @@ services:
     name: portfolio
     env: docker
     dockerfilePath: ./Dockerfile
+    plan: free
     envVars:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
-        value: false
+        value: "false"
       - key: APP_KEY
-        generateValue: true
+        sync: false
       - key: APP_URL
         value: https://portfolio-8gij.onrender.com
       - key: LOG_CHANNEL

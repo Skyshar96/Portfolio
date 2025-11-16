@@ -9,6 +9,7 @@ mkdir -p bootstrap/cache
 
 # Permissions
 chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
 
 # Générer la clé si elle n'existe pas
 if [ -z "$APP_KEY" ] || [ "$APP_KEY" = "base64:placeholder" ]; then
@@ -16,15 +17,15 @@ if [ -z "$APP_KEY" ] || [ "$APP_KEY" = "base64:placeholder" ]; then
 fi
 
 # Clear old cache
-php artisan cache:clear
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
+php artisan cache:clear || true
+php artisan config:clear || true
+php artisan route:clear || true
+php artisan view:clear || true
 
 # Optimisations pour production
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# Démarrer le serveur
-php -S 0.0.0.0:${PORT:-10000} -t public
+# Démarrer Apache
+apache2-foreground
