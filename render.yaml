@@ -13,6 +13,8 @@ services:
         sync: false
       - key: APP_URL
         value: https://portfolio-8gij.onrender.com
+      - key: ASSET_URL
+        value: https://portfolio-8gij.onrender.com
       - key: LOG_CHANNEL
         value: errorlog
       - key: SESSION_DRIVER

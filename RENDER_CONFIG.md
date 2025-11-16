@@ -26,7 +26,12 @@ false
 https://portfolio-8gij.onrender.com
 ```
 
-5. **LOG_CHANNEL** :
+5. **ASSET_URL** :
+```
+https://portfolio-8gij.onrender.com
+```
+
+6. **LOG_CHANNEL** :
 ```
 errorlog
 ```
