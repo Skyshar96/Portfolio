@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: portfolio
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        value: https://portfolio-8gij.onrender.com
+      - key: LOG_CHANNEL
+        value: errorlog
+      - key: SESSION_DRIVER
+        value: file
+      - key: CACHE_DRIVER
+        value: file

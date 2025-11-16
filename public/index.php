@@ -31,6 +31,12 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 |
 */
 
+// Vérifier si vendor existe
+if (!file_exists(__DIR__.'/../vendor/autoload.php')) {
+    http_response_code(500);
+    die('Erreur: Veuillez exécuter "composer install" dans le répertoire du projet.');
+}
+
 require __DIR__.'/../vendor/autoload.php';
 
 /*

@@ -1,62 +1,39 @@
-FROM php:8.2-apache
+FROM php:8.3-cli
 
-# Install system dependencies
+WORKDIR /app
+
+# Installer les dépendances système et extensions PHP
 RUN apt-get update && apt-get install -y \
     git \
     curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
     zip \
     unzip \
-    libzip-dev
+    libxml2-dev \
+    libcurl4-openssl-dev \
+    && docker-php-ext-install simplexml curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
-
-# Install Composer
+# Installer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
-WORKDIR /var/www/html
+# Copier les fichiers de l'application
+COPY . .
 
-# Copy existing application directory
-COPY . /var/www/html
+# Installer les dépendances PHP
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Install dependencies
-RUN composer install --no-dev --optimize-autoloader
+# Créer les dossiers nécessaires avec permissions
+RUN mkdir -p storage/framework/cache/data \
+    storage/framework/sessions \
+    storage/framework/views \
+    storage/logs \
+    bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+# Copier et rendre exécutable le script de démarrage
+RUN chmod +x start.sh
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+EXPOSE 10000
 
-# Configure Apache DocumentRoot
-ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
-
-# Copy Apache configuration
-COPY <<EOF /etc/apache2/sites-available/000-default.conf
-<VirtualHost *:80>
-    DocumentRoot /var/www/html/public
-
-    <Directory /var/www/html/public>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog \${APACHE_LOG_DIR}/error.log
-    CustomLog \${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-EOF
-
-# Generate application key if not set
-RUN php artisan key:generate --no-interaction || true
-
-EXPOSE 80
-
-CMD ["apache2-foreground"]
+CMD ["bash", "start.sh"]
