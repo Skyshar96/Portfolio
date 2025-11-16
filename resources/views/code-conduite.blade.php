@@ -38,7 +38,7 @@
 <section style="margin-top:3rem;">
     <h2 class="section-title">Engagements opérationnels</h2>
     <div class="two-column">
-        <article class="card green-card">
+        <article class="card red-card">
             <h3>Check-list avant déploiement</h3>
             <ul class="list">
                 <li>Revue de code croisée validée.</li>

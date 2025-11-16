@@ -3,20 +3,20 @@
     <footer class="site-footer">
         <div class="container">
             <div>
-                <p class="footer-title">Contact</p>
-                <p>Email : <a href="mailto:etudiant.bts@example.com">etudiant.bts@example.com</a></p>
-                <p>Téléphone : 06 12 34 56 78</p>
+                <p class="footer-title">Wyatt Guemache</p>
+                <p>Étudiant BTS SIO SLAM</p>
+                <p>Développeur Web Full-Stack</p>
             </div>
             <div>
-                <p class="footer-title">Réseaux</p>
+                <p class="footer-title">Projets</p>
                 <ul class="social-links">
-                    <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-                    <li><a href="https://github.com" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://mediaphone11.fr" target="_blank" rel="noopener">Mediaphone</a></li>
+                    <li><a href="https://github.com/Skyshar96" target="_blank" rel="noopener">GitHub</a></li>
                 </ul>
             </div>
             <div>
-                <p class="footer-title">Mention</p>
-                <p>Portfolio réalisé dans le cadre du BTS SIO (option SLAM).</p>
+                <p class="footer-title">Technologies</p>
+                <p>PHP • Laravel • Python • Java<br>HTML • CSS • JavaScript • MySQL</p>
             </div>
         </div>
     </footer>

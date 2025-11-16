@@ -4,87 +4,113 @@
 
 @section('content')
 <section>
-    <h1 class="section-title">Mes expériences en stage</h1>
-    <p class="section-intro">Deux missions d'envergure qui m'ont permis d'appliquer les compétences du BTS SIO option SLAM et d'accélérer ma progression professionnelle.</p>
+    <h1 class="section-title">Mon expérience professionnelle</h1>
+    <p class="section-intro">Stage professionnel qui m'a permis d'appliquer mes compétences en développement web dans un contexte réel d'entreprise.</p>
 </section>
 
 <section class="card-grid">
-    <article class="card">
-        <h2>Stage 1 — Développement d'un extranet client</h2>
-        <p><strong>Organisation :</strong> Agence web NovaDigital (10 semaines)</p>
+    <article class="card ">
+        <h2>Stage — Développement web chez Mediaphone</h2>
+        <p><strong>Organisation :</strong> Mediaphone</p>
+        <p><strong>Projet :</strong> Conception et développement du site web de l'entreprise</p>
         <ul class="list">
-            <li><strong>Contexte :</strong> refonte d'un extranet pour centraliser les demandes et suivre les projets.</li>
+            <li><strong>Mission principale :</strong> Développement complet d'un site web professionnel pour présenter l'entreprise et ses services.</li>
             <li><strong>Réalisations :</strong>
                 <ul class="list" style="padding-left:1rem;">
-                    <li>Architecture MVC en PHP 8 / Laravel 10.</li>
-                    <li>Tableaux de bord dynamiques (Charts.js) et export PDF.</li>
-                    <li>Authentification sécurisée (JWT, MFA par email).</li>
+                    <li>Conception et développement du site <a href="https://mediaphone11.fr" target="_blank" style="color: #2563eb;">mediaphone11.fr</a></li>
+                    <li>Intégration de l'identité visuelle de l'entreprise</li>
+                    <li>Développement responsive pour mobile et tablette</li>
+                    <li>Optimisation des performances et du référencement</li>
                 </ul>
             </li>
-            <li><strong>Compétences :</strong> conception base de données, API REST, gestion de projet agile.</li>
-            <li><strong>Résultat :</strong> réduction de 40% des délais de traitement des demandes.</li>
+            <li><strong>Compétences développées :</strong> Développement web, gestion de projet, relation client, autonomie</li>
+            <li><strong>Technologies utilisées :</strong> PHP, HTML5, CSS3, JavaScript, MySQL</li>
         </ul>
         <div class="badge-list">
-            <span class="badge">Laravel</span>
+            <span class="badge">PHP</span>
+            <span class="badge">HTML/CSS</span>
+            <span class="badge">JavaScript</span>
             <span class="badge">MySQL</span>
-            <span class="badge">Tailwind</span>
         </div>
     </article>
     <article class="card">
-        <h2>Stage 2 — Supervision & cybersécurité</h2>
-        <p><strong>Organisation :</strong> DSI d'une collectivité locale (8 semaines)</p>
+        <h2>Projets scolaires BTS SIO</h2>
+        <p><strong>Contexte :</strong> Projets réalisés dans le cadre de ma formation BTS SIO SLAM</p>
         <ul class="list">
-            <li><strong>Contexte :</strong> renforcer la supervision réseau/serveurs et formaliser les procédures d'incident.</li>
-            <li><strong>Réalisations :</strong>
+            <li><strong>Projet 1 — Gestion de caserne de pompiers :</strong>
                 <ul class="list" style="padding-left:1rem;">
-                    <li>Déploiement d'une stack monitoring (Zabbix + Grafana).</li>
-                    <li>Scripts PowerShell/Bash pour l'automatisation des audits.</li>
-                    <li>Plan de réponse à incident et fiches réflexes (phishing, ransomwares).</li>
+                    <li>Application de gestion administrative complète</li>
+                    <li>Gestion des pompiers (grades, rôles, matricules)</li>
+                    <li>Gestion des véhicules et attribution</li>
+                    <li>Système de sessions et authentification</li>
                 </ul>
             </li>
-            <li><strong>Compétences :</strong> administration système, sécurité, reporting, conduite du changement.</li>
-            <li><strong>Résultat :</strong> temps moyen de résolution d'incidents réduit à 2h.</li>
+            <li><strong>Projet 2 — Plateforme de vente de photos :</strong>
+                <ul class="list" style="padding-left:1rem;">
+                    <li>Site e-commerce pour photographes</li>
+                    <li>Système d'inscription et connexion</li>
+                    <li>Dashboard admin et photographe</li>
+                    <li>Gestion complète des photos (upload, suppression)</li>
+                </ul>
+            </li>
+            <li><strong>Technologies :</strong> PHP, Laravel, MySQL, JavaScript</li>
         </ul>
         <div class="badge-list">
-            <span class="badge">Zabbix</span>
-            <span class="badge">Grafana</span>
-            <span class="badge">PowerShell</span>
+            <span class="badge">Laravel</span>
+            <span class="badge">PHP</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">JavaScript</span>
         </div>
     </article>
 </section>
 
 <section style="margin-top:3rem;">
-    <h2 class="section-title">Compétences consolidées</h2>
+    <h2 class="section-title">Compétences développées</h2>
     <div class="two-column">
         <article class="card">
             <h3>Techniques</h3>
             <ul class="list">
-                <li>Développement full-stack PHP / JS.</li>
-                <li>Intégration continue (GitLab CI, Docker Compose).</li>
-                <li>Sécurisation (gestion des accès, sauvegardes, PRA/PCA).</li>
+                <li>Développement full-stack PHP/Laravel</li>
+                <li>Conception de bases de données MySQL</li>
+                <li>Développement front-end HTML/CSS/JavaScript</li>
+                <li>Architecture MVC et patterns de conception</li>
+                <li>Gestion de sessions et authentification</li>
             </ul>
         </article>
         <article class="card">
-            <h3>Transverses</h3>
+            <h3>Professionnelles</h3>
             <ul class="list">
-                <li>Communication et vulgarisation pour les métiers.</li>
-                <li>Gestion du temps et priorisation des incidents.</li>
-                <li>Support utilisateurs et formation.</li>
+                <li>Gestion de projet et autonomie</li>
+                <li>Communication avec le client</li>
+                <li>Travail en équipe et collaboration</li>
+                <li>Documentation technique</li>
+                <li>Respect des délais et cahier des charges</li>
             </ul>
         </article>
     </div>
 </section>
 
 <section style="margin-top:3rem;">
-    <h2 class="section-title">Livrables clés</h2>
+    <h2 class="section-title">Technologies maîtrisées</h2>
     <div class="card-grid">
         <article class="card">
-            <h3>Dossier projet SLAM</h3>
-            <p>Documentation complète du projet extranet : cahier des charges, spécifications, diagrammes UML, plan de tests.</p>
+            <h3>Backend</h3>
+            <p><strong>PHP</strong> : Développement orienté objet, frameworks Laravel</p>
+            <p><strong>Python</strong> : Scripts et automatisation</p>
+            <p><strong>Java</strong> : Programmation orientée objet</p>
+            <p><strong>MySQL</strong> : Conception et gestion de bases de données</p>
         </article>
         <article class="card">
-            <h3>Rapport de sécurité</h3>
-            <p>Analyse de risques, plan de remédiation, scripts d'automatisation et indicateurs de suivi pour la DSI.</p>
+            <h3>Frontend</h3>
+            <p><strong>HTML5</strong> : Structure et sémantique web</p>
+            <p><strong>CSS3</strong> : Stylisation et design responsive</p>
+            <p><strong>JavaScript</strong> : Interactivité et manipulation du DOM</p>
+        </article>
+        <article class="card">
+            <h3>Outils</h3>
+            <p><strong>Git/GitHub</strong> : Versioning et collaboration</p>
+            <p><strong>Laravel</strong> : Framework PHP MVC</p>
+            <p><strong>VS Code</strong> : Environnement de développement</p>
         </article>
     </div>
 </section>
