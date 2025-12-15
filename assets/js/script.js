@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // Send form data to PHP - use send_email.php for handling
-                const response = await fetch('send_email.php', {
+                const response = await fetch('../api/send_email.php', {
                     method: 'POST',
                     body: formData
                 });

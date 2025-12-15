@@ -1,17 +1,19 @@
 # Active la réécriture d'URL
 RewriteEngine On
 
-# Redirige index.html vers index.php
-RewriteRule ^index\.html$ index.php [L,R=301]
+# Redirige les anciennes URLs vers les nouvelles
+RewriteRule ^experience\.php$ pages/experience.php [L,R=301]
+RewriteRule ^projects\.php$ pages/projects.php [L,R=301]
+RewriteRule ^contact\.php$ pages/contact.php [L,R=301]
 
-# Permet d'accéder aux pages sans l'extension .php
-# Par exemple : /contact au lieu de /contact.php
+# Permet d'accéder aux pages sans l'extension .php depuis pages/
+# Par exemple : /pages/contact au lieu de /pages/contact.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
+RewriteRule ^pages/(.*)$ pages/$1.php [L]
 
 # Définit index.php comme page par défaut
-DirectoryIndex index.php index.html
+DirectoryIndex index.php
 
 # Amélioration de la sécurité
 Options -Indexes

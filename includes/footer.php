@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();

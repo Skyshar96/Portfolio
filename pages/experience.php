@@ -1,7 +1,7 @@
 <?php 
 $current_page = 'experience';
 $page_title = 'Experience - Wyatt Guemache';
-include 'header.php'; 
+include '../includes/header.php'; 
 ?>
 
 <!-- Experience Section -->
@@ -108,4 +108,4 @@ include 'header.php';
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

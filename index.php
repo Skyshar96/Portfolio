@@ -1,7 +1,7 @@
 <?php 
 $current_page = 'home';
 $page_title = 'Wyatt Guemache - Portfolio';
-include 'header.php'; 
+include 'includes/header-home.php'; 
 ?>
 
 <!-- Hero Section -->
@@ -54,21 +54,21 @@ include 'header.php';
         <span class="title-underline"></span>
     </h2>
     <div class="quick-links-grid">
-        <a href="experience.php" class="quick-link-card">
+        <a href="pages/experience.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="briefcase"></i>
             </div>
             <h3>Experience</h3>
             <p>Discover my professional journey and work history</p>
         </a>
-        <a href="projects.php" class="quick-link-card">
+        <a href="pages/projects.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="code"></i>
             </div>
             <h3>Projects</h3>
             <p>View my latest projects and creations</p>
         </a>
-        <a href="contact.php" class="quick-link-card">
+        <a href="pages/contact.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="mail"></i>
             </div>
@@ -78,4 +78,4 @@ include 'header.php';
     </div>
 </section>
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer-home.php'; ?>
