@@ -20,10 +20,13 @@
             <!-- Header / Navigation -->
             <header id="header">
                 <nav>
-                    <a href="index.php" class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>">home</a>
-                    <a href="pages/experience.php" class="nav-link <?php echo ($current_page == 'experience') ? 'active' : ''; ?>">experience</a>
-                    <a href="pages/projects.php" class="nav-link <?php echo ($current_page == 'projects') ? 'active' : ''; ?>">projects</a>
-                    <a href="pages/contact.php" class="nav-link <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">contact</a>
+                    <a href="index.php" class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>">Home</a>
+                    <a href="experience.php" class="nav-link <?php echo ($current_page == 'experience') ? 'active' : ''; ?>">Experience</a>
+                    <a href="projects.php" class="nav-link <?php echo ($current_page == 'projects') ? 'active' : ''; ?>">Projects</a>
+                    <a href="veille.php" class="nav-link <?php echo ($current_page == 'veille') ? 'active' : ''; ?>">Cybersécurité</a>
+                    <a href="veille-quantique.php" class="nav-link <?php echo ($current_page == 'veille-quantique') ? 'active' : ''; ?>">Quantique</a>
+                    <a href="code-conduite.php" class="nav-link <?php echo ($current_page == 'code-conduite') ? 'active' : ''; ?>">Conduite</a>
+                    <a href="contact.php" class="nav-link <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">Contact</a>
                 </nav>
                 <div class="header-actions">
                     <button class="lang-toggle" id="langToggle">us EN</button>

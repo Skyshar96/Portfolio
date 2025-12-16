@@ -1,7 +1,7 @@
 <?php 
 $current_page = 'projects';
 $page_title = 'Projects - Wyatt Guemache';
-include '../includes/header.php'; 
+include 'includes/header-home.php'; 
 ?>
 
 <!-- Projects Section -->
@@ -204,4 +204,4 @@ include '../includes/header.php';
     </div>
 </section>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer-home.php'; ?>

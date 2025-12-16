@@ -1,7 +1,7 @@
 <?php 
 $current_page = 'contact';
 $page_title = 'Contact - Wyatt Guemache';
-include '../includes/header.php'; 
+include 'includes/header-home.php'; 
 ?>
 
 <!-- Contact Section -->
@@ -93,4 +93,4 @@ include '../includes/header.php';
     </div>
 </section>
 
-<?php include '../includes/footer.php'; ?>
+<?php include 'includes/footer-home.php'; ?>

@@ -14,32 +14,32 @@ include 'includes/header-home.php';
                  class="profile-image">
         </div>
         <div class="hero-text">
-            <h1 class="hero-title">Mathis Zeghouani</h1>
+            <h1 class="hero-title">Wyatt Guemache</h1>
             <div class="hero-description">
                 <p class="hero-intro">
                     Software engineer specializing in 
-                    <span class="highlight">React</span>, 
-                    <span class="highlight">Next.js</span>, 
-                    <span class="highlight">TypeScript</span> and 
-                    <span class="highlight">Go</span>.
+                    <span class="highlight">JavaScript</span>, 
+                    <span class="highlight">Php</span>, 
+                    <span class="highlight">html</span> and 
+                    <span class="highlight">css</span>.
                 </p>
             </div>
             <p class="hero-details">
-                19 years old from France, coding since 2021. Student at 42. I love building modern web applications.
+                19 years old from France, coding since 2021. Student at Paul Sabatier. I love building modern web applications.
             </p>
             <p class="hero-contact">
                 Reach out at 
-                <a href="mailto:mathisdev7@gmail.com" class="email-link">mathisdev7@gmail.com</a> 
+                <a href="mailto:mathisdev7@gmail.com" class="email-link">guemachewyatt@gmail.com</a> 
                 or through my social channels.
             </p>
             <div class="social-links">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <a href="https://github.com/Skyshar96" target="_blank" rel="noopener noreferrer" class="social-icon">
                     <i data-lucide="github"></i>
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon">
                     <i data-lucide="twitter"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <a href="https://www.linkedin.com/in/wyatt-guemache-5710a2235/" target="_blank" rel="noopener noreferrer" class="social-icon">
                     <i data-lucide="linkedin"></i>
                 </a>
             </div>
@@ -54,21 +54,21 @@ include 'includes/header-home.php';
         <span class="title-underline"></span>
     </h2>
     <div class="quick-links-grid">
-        <a href="pages/experience.php" class="quick-link-card">
+        <a href="experience.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="briefcase"></i>
             </div>
             <h3>Experience</h3>
             <p>Discover my professional journey and work history</p>
         </a>
-        <a href="pages/projects.php" class="quick-link-card">
+        <a href="projects.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="code"></i>
             </div>
             <h3>Projects</h3>
             <p>View my latest projects and creations</p>
         </a>
-        <a href="pages/contact.php" class="quick-link-card">
+        <a href="contact.php" class="quick-link-card">
             <div class="quick-link-icon">
                 <i data-lucide="mail"></i>
             </div>
