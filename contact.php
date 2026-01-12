@@ -19,19 +19,13 @@ include 'includes/header-home.php';
                 <div class="contact-icon">
                     <i data-lucide="mail"></i>
                 </div>
-                <a href="mailto:mathisdev7@gmail.com" class="contact-text">mathisdev7@gmail.com</a>
+                <a href="mailto:guemachewyatt@gmail.com" class="contact-text">guemachewyatt@gmail.com</a>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">
                     <i data-lucide="map-pin"></i>
                 </div>
-                <span class="contact-text">Paris, France</span>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i data-lucide="phone"></i>
-                </div>
-                <span class="contact-text">+33 X XX XX XX XX</span>
+                <span class="contact-text">Carcassonne, France</span>
             </div>
         </div>
         
