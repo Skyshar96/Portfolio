@@ -56,7 +56,7 @@ include 'includes/header-home.php';
     <div class="social-section">
         <h3 class="social-title">Suivez-moi sur les réseaux sociaux</h3>
         <div class="social-links-large">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link-large">
+            <a href="https://github.com/Skyshar96" target="_blank" rel="noopener noreferrer" class="social-link-large">
                 <div class="social-icon-large">
                     <i data-lucide="github"></i>
                 </div>
@@ -65,22 +65,13 @@ include 'includes/header-home.php';
                     <p>Check out my code and repositories</p>
                 </div>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link-large">
+            <a href="https://www.linkedin.com/in/wyatt-guemache-5710a2235/" target="_blank" rel="noopener noreferrer" class="social-link-large">
                 <div class="social-icon-large">
                     <i data-lucide="linkedin"></i>
                 </div>
                 <div class="social-info">
                     <h4>LinkedIn</h4>
                     <p>Connect with me professionally</p>
-                </div>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link-large">
-                <div class="social-icon-large">
-                    <i data-lucide="twitter"></i>
-                </div>
-                <div class="social-info">
-                    <h4>Twitter</h4>
-                    <p>Follow my updates and thoughts</p>
                 </div>
             </a>
         </div>
