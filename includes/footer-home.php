@@ -1,4 +1,3 @@
-            <!-- Footer -->
             <footer class="footer">
                 <p>© 2024 Wyatt Guemache. All rights reserved.</p>
             </footer>

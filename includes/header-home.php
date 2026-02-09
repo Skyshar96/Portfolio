@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title : 'Wyatt Guemache - Portfolio'; ?></title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Lucide Icons via CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
     <div class="container">
-        <!-- Background decorative elements -->
         <div class="bg-decorative">
             <div class="bg-circle bg-circle-top"></div>
             <div class="bg-circle bg-circle-bottom"></div>
         </div>
 
         <div class="content-wrapper">
-            <!-- Header / Navigation -->
             <header id="header">
-                <nav>
+                <div class="logo">
+                    <a href="index.php" class="logo-link">WG</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="mainNav">
                     <a href="index.php" class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>">Home</a>
                     <a href="experience.php" class="nav-link <?php echo ($current_page == 'experience') ? 'active' : ''; ?>">Experience</a>
                     <a href="projects.php" class="nav-link <?php echo ($current_page == 'projects') ? 'active' : ''; ?>">Projects</a>

@@ -1,17 +1,15 @@
 <?php 
 $current_page = 'projects';
 $page_title = 'Projects - Wyatt Guemache';
-include 'includes/header-home.php'; 
+include 'includes/header-home.php';
 ?>
 
-<!-- Projects Section -->
 <section class="projects-section page-section">
     <h2 class="section-title">
         Latest Projects
         <span class="title-underline"></span>
     </h2>
     <div class="projects-grid">
-        <!-- Project 1 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -43,7 +41,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -75,7 +72,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -106,7 +102,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Project 4 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -138,7 +133,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Project 5 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -170,7 +164,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Project 6 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>

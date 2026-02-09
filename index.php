@@ -4,7 +4,6 @@ $page_title = 'Wyatt Guemache - Portfolio';
 include 'includes/header-home.php';
 ?>
 
-<!-- Hero Section -->
 <section id="home" class="hero-section">
     <div class="hero-content">
         <div class="profile-container">
@@ -44,7 +43,6 @@ include 'includes/header-home.php';
     </div>
 </section>
 
-<!-- Quick Links to Other Sections -->
 <section class="quick-links">
     <h2 class="section-title">
         Explore

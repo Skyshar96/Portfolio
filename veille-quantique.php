@@ -9,7 +9,6 @@ $rss_url = 'https://phys.org/rss-feed/quantum-physics/';
 $articles = fetchRSSFeed($rss_url, 5);
 ?>
 
-<!-- Veille Section -->
 <section class="projects-section page-section">
     <h2 class="section-title">
         Veille Informatique Quantique
@@ -59,7 +58,6 @@ $articles = fetchRSSFeed($rss_url, 5);
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <!-- Articles de secours si le flux RSS n'est pas disponible -->
             <div class="project-card">
                 <div class="project-image-container">
                     <div class="project-overlay"></div>
@@ -96,7 +94,6 @@ $articles = fetchRSSFeed($rss_url, 5);
         <?php endif; ?>
     </div>
 
-    <!-- Ressources supplémentaires -->
     <div class="veille-resources">
         <h3 class="section-title">
             Sources Recommandées

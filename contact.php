@@ -1,10 +1,9 @@
 <?php 
 $current_page = 'contact';
 $page_title = 'Contact - Wyatt Guemache';
-include 'includes/header-home.php'; 
+include 'includes/header-home.php';
 ?>
 
-<!-- Contact Section -->
 <section class="contact-section page-section">
     <h2 class="section-title">
         Contact
@@ -29,7 +28,6 @@ include 'includes/header-home.php';
             </div>
         </div>
         
-        <!-- Contact Form -->
         <form id="contactForm" class="contact-form">
             <div class="form-group">
                 <label for="name">Nom</label>
@@ -52,7 +50,6 @@ include 'includes/header-home.php';
         </form>
     </div>
 
-    <!-- Social Media Links -->
     <div class="social-section">
         <h3 class="social-title">Suivez-moi sur les réseaux sociaux</h3>
         <div class="social-links-large">

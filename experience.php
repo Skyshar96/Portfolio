@@ -4,14 +4,12 @@ $page_title = 'Experience - Wyatt Guemache';
 include 'includes/header-home.php'; 
 ?>
 
-<!-- Experience Section -->
 <section class="experience-section page-section">
     <h2 class="section-title">
         Experience
         <span class="title-underline"></span>
     </h2>
     <div class="experience-timeline">
-        <!-- Experience 1 -->
         <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-header">
@@ -29,7 +27,6 @@ include 'includes/header-home.php';
             </p>
         </div>
 
-        <!-- Experience 2 -->
         <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-header">
@@ -47,7 +44,6 @@ include 'includes/header-home.php';
             </p>
         </div>
 
-        <!-- Experience 3 -->
         <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-header">
@@ -65,7 +61,6 @@ include 'includes/header-home.php';
             </p>
         </div>
 
-        <!-- Experience 4 -->
         <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-header">
@@ -84,7 +79,6 @@ include 'includes/header-home.php';
         </div>
     </div>
 
-    <!-- Skills Section -->
     <div class="skills-section">
         <h2 class="section-title">
             Skills & Technologies

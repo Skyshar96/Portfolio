@@ -4,7 +4,6 @@ $page_title = 'Code de Conduite - Wyatt Guemache';
 include 'includes/header-home.php'; 
 ?>
 
-<!-- Code de Conduite Section -->
 <section class="projects-section page-section">
     <h2 class="section-title">
         Code de Conduite Professionnel
@@ -15,7 +14,6 @@ include 'includes/header-home.php';
     </p>
     
     <div class="projects-grid">
-        <!-- Principe 1 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -39,7 +37,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Principe 2 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -63,7 +60,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Principe 3 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -87,7 +83,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Principe 4 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -111,7 +106,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Principe 5 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -135,7 +129,6 @@ include 'includes/header-home.php';
             </div>
         </div>
 
-        <!-- Principe 6 -->
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
@@ -160,7 +153,6 @@ include 'includes/header-home.php';
         </div>
     </div>
 
-    <!-- Ressources supplémentaires -->
     <div class="veille-resources">
         <h3 class="section-title">
             Références et Codes de Conduite

@@ -1,9 +1,50 @@
-// Smooth scroll for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Navigation active state - already handled by PHP for multi-page
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Language toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 900 && 
+                mainNav.classList.contains('active') && 
+                !mainNav.contains(event.target) && 
+                !mobileMenuToggle.contains(event.target)) {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                if (window.innerWidth > 900 && mainNav.classList.contains('active')) {
+                    mobileMenuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }, 250);
+        });
+    }
+
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
         let currentLang = 'en';
@@ -11,12 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
         langToggle.addEventListener('click', function() {
             currentLang = currentLang === 'en' ? 'fr' : 'en';
             this.textContent = currentLang === 'en' ? 'us EN' : 'fr FR';
-            // Here you would implement actual language switching logic
-            console.log(`Language switched to: ${currentLang}`);
         });
     }
 
-    // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -31,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
     const animatedElements = document.querySelectorAll('.experience-item, .project-card, .quick-link-card, .skill-category');
     animatedElements.forEach((element, index) => {
         element.style.opacity = '0';
@@ -40,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
@@ -48,17 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
             const formData = new FormData(contactForm);
             
-            // Show loading state
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             submitButton.textContent = 'Envoi en cours...';
             submitButton.disabled = true;
 
             try {
-                // Send form data to PHP - use send_email.php for handling
                 const response = await fetch('../api/send_email.php', {
                     method: 'POST',
                     body: formData
@@ -82,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
 
-                // Hide message after 5 seconds
                 setTimeout(() => {
                     formMessage.style.display = 'none';
                 }, 5000);
@@ -90,7 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Parallax effect for background circles
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const circles = document.querySelectorAll('.bg-circle');
@@ -101,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hover effect to project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -113,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Header transparency on scroll
     const header = document.getElementById('header');
     let lastScrollTop = 0;
 
@@ -129,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 
-    // Loading animation
     window.addEventListener('load', function() {
         document.body.style.opacity = '0';
         setTimeout(() => {
@@ -138,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     });
 
-    // Add typing effect to hero title (optional)
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const text = heroTitle.textContent;
@@ -152,17 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(typeWriter, 50);
             }
         }
-
-        // Uncomment to enable typing effect
-        // setTimeout(typeWriter, 500);
     }
 
-    // Console message
     console.log('%c👋 Hello Developer!', 'font-size: 20px; color: #22d3ee; font-weight: bold;');
     console.log('%cInterested in the code? Check out my GitHub!', 'font-size: 14px; color: #a3a3a3;');
 });
 
-// Add ripple effect to buttons
 function createRipple(event) {
     const button = event.currentTarget;
     const ripple = document.createElement('span');
@@ -182,12 +204,10 @@ function createRipple(event) {
     button.appendChild(ripple);
 }
 
-// Apply ripple to buttons
 document.querySelectorAll('.submit-button, .social-icon').forEach(button => {
     button.addEventListener('click', createRipple);
 });
 
-// Add ripple styles dynamically
 const style = document.createElement('style');
 style.textContent = `
     .ripple {
@@ -213,7 +233,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Lazy loading for images
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -232,7 +251,6 @@ if ('IntersectionObserver' in window) {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Prevent form resubmission on page refresh
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
