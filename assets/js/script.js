@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'projects.title': 'Derniers Projets',
             'projects.code': 'Code',
-            'projects.demo': 'Démo',
+            'projects.demo': 'Lien',
             'projects.p1Title': 'Mediaphone',
             'projects.p1Desc': 'Site vitrine local de reparation et assistance informatique a Pepieux avec presentation des services, produits et contact.',
             'projects.p2Title': 'Au PecheMignon',
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'projects.title': 'Latest Projects',
             'projects.code': 'Code',
-            'projects.demo': 'Demo',
+            'projects.demo': 'Link',
             'projects.p1Title': 'Mediaphone',
             'projects.p1Desc': 'Local storefront website for computer and phone repair support in Pepieux, including services, products, and contact pages.',
             'projects.p2Title': 'Au PecheMignon',

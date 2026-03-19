@@ -1,7 +1,10 @@
-<?php 
+<?php
 $current_page = 'projects';
 $page_title = 'Projects - Wyatt Guemache';
 include 'includes/header-home.php';
+
+// Cache buster - Force le navigateur à recharger
+echo '<!-- Version: ' . time() . ' -->';
 ?>
 
 <section class="projects-section page-section">
@@ -40,7 +43,7 @@ include 'includes/header-home.php';
                     </a>
                     <a href="https://mediaphone11.fr" target="_blank" rel="noopener noreferrer" class="project-link">
                         <i data-lucide="external-link"></i>
-                        <span>Demo</span>
+                        <span>Lien</span>
                     </a>
                 </div>
             </div>
@@ -76,7 +79,7 @@ include 'includes/header-home.php';
                     </a>
                     <a href="https://aupechemignon11.fr" target="_blank" rel="noopener noreferrer" class="project-link">
                         <i data-lucide="external-link"></i>
-                        <span>Demo</span>
+                        <span>Lien</span>
                     </a>
                 </div>
             </div>
