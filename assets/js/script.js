@@ -17,7 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'contact.intro': 'Intéressé par une collaboration ? N\'hésitez pas à me contacter pour discuter de votre projet.',
             'contact.name': 'Nom',
+            'contact.email': 'Email',
             'contact.subject': 'Sujet',
+            'contact.message': 'Message',
             'contact.submit': 'Envoyer le message',
             'contact.follow': 'Suivez-moi sur les réseaux sociaux',
 
@@ -155,7 +157,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'contact.intro': 'Interested in collaborating? Feel free to contact me to discuss your project.',
             'contact.name': 'Name',
+            'contact.email': 'Email',
             'contact.subject': 'Subject',
+            'contact.message': 'Message',
             'contact.submit': 'Send message',
             'contact.follow': 'Follow me on social media',
 
@@ -330,7 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: '.contact-intro', key: 'contact.intro' },
         { selector: '.contact-section .section-title', key: 'nav.contact', preserveChildren: true, whenPath: 'contact.php' },
         { selector: 'label[for="name"]', key: 'contact.name' },
+        { selector: 'label[for="email"]', key: 'contact.email' },
         { selector: 'label[for="subject"]', key: 'contact.subject' },
+        { selector: 'label[for="message"]', key: 'contact.message' },
         { selector: '.social-link-large:nth-of-type(1) .social-info p', key: 'contact.socialGithubDesc', whenPath: 'contact.php' },
         { selector: '.social-link-large:nth-of-type(2) .social-info p', key: 'contact.socialLinkedInDesc', whenPath: 'contact.php' },
         { selector: '.submit-button', key: 'contact.submit' },
@@ -412,12 +418,19 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: '#mobileMenuToggle', attr: 'aria-label', key: 'header.toggleMenu' }
     ];
 
+    function getCurrentPage() {
+        const path = window.location.pathname || '';
+        const normalizedPath = path.endsWith('/') ? path.slice(0, -1) : path;
+        const fileName = normalizedPath.split('/').pop();
+        return fileName || 'index.php';
+    }
+
     function shouldApplyBinding(binding) {
         if (!binding.whenPath) {
             return !binding.requireSelector || !!document.querySelector(binding.requireSelector);
         }
 
-        const pathMatch = window.location.pathname.endsWith(binding.whenPath);
+        const pathMatch = getCurrentPage() === binding.whenPath;
         if (!pathMatch) {
             return false;
         }
@@ -432,15 +445,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function applyLanguage(lang) {
         const currentLang = translations[lang] ? lang : 'fr';
         const dictionary = translations[currentLang];
-        const path = window.location.pathname;
+        const currentPage = getCurrentPage();
 
-        if (path.endsWith('index.php')) document.title = dictionary['title.index'];
-        if (path.endsWith('experience.php')) document.title = dictionary['title.experience'];
-        if (path.endsWith('projects.php')) document.title = dictionary['title.projects'];
-        if (path.endsWith('contact.php')) document.title = dictionary['title.contact'];
-        if (path.endsWith('veille.php')) document.title = dictionary['title.veille'];
-        if (path.endsWith('veille-quantique.php')) document.title = dictionary['title.quantum'];
-        if (path.endsWith('code-conduite.php')) document.title = dictionary['title.conduct'];
+        if (currentPage === 'index.php') document.title = dictionary['title.index'];
+        if (currentPage === 'experience.php') document.title = dictionary['title.experience'];
+        if (currentPage === 'projects.php') document.title = dictionary['title.projects'];
+        if (currentPage === 'contact.php') document.title = dictionary['title.contact'];
+        if (currentPage === 'veille.php') document.title = dictionary['title.veille'];
+        if (currentPage === 'veille-quantique.php') document.title = dictionary['title.quantum'];
+        if (currentPage === 'code-conduite.php') document.title = dictionary['title.conduct'];
 
         textBindings.forEach(binding => {
             if (!shouldApplyBinding(binding)) {
