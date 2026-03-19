@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'experience.tools': 'Outils & Autres',
 
             'projects.title': 'Derniers Projets',
-            'projects.code': 'Code',
+            'projects.code': 'Details',
             'projects.demo': 'Lien',
             'projects.p1Title': 'Mediaphone',
             'projects.p1Desc': 'Site vitrine local de reparation et assistance informatique a Pepieux avec presentation des services, produits et contact.',
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'experience.tools': 'Tools & Others',
 
             'projects.title': 'Latest Projects',
-            'projects.code': 'Code',
+            'projects.code': 'Details',
             'projects.demo': 'Link',
             'projects.p1Title': 'Mediaphone',
             'projects.p1Desc': 'Local storefront website for computer and phone repair support in Pepieux, including services, products, and contact pages.',
