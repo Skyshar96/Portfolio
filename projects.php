@@ -18,7 +18,9 @@ include 'includes/header-home.php';
                      class="project-image">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Mediaphone</h3>
+                <h3 class="project-title">
+                    <a href="project-mediaphone.php" class="project-link">Mediaphone</a>
+                </h3>
                 <p class="project-description">
                     Site vitrine local de reparation et assistance informatique a Pepieux avec presentation des services, produits et contact.
                 </p>
@@ -28,6 +30,10 @@ include 'includes/header-home.php';
                     <span class="tech-badge">Support local</span>
                 </div>
                 <div class="project-links">
+                    <a href="project-mediaphone.php" class="project-link">
+                        <i data-lucide="file-text"></i>
+                        <span>Details</span>
+                    </a>
                     <a href="https://mediaphone11.fr" target="_blank" rel="noopener noreferrer" class="project-link">
                         <i data-lucide="github"></i>
                         <span>Code</span>
@@ -48,7 +54,9 @@ include 'includes/header-home.php';
                      class="project-image project-image-contained">
             </div>
             <div class="project-content">
-                <h3 class="project-title">Au PecheMignon</h3>
+                <h3 class="project-title">
+                    <a href="project-aupechemignon.php" class="project-link">Au PecheMignon</a>
+                </h3>
                 <p class="project-description">
                     Site de boulangerie artisanale a Carcassonne presentant produits frais, savoir-faire local et informations de contact.
                 </p>
@@ -58,6 +66,10 @@ include 'includes/header-home.php';
                     <span class="tech-badge">MySQL</span>
                 </div>
                 <div class="project-links">
+                    <a href="project-aupechemignon.php" class="project-link">
+                        <i data-lucide="file-text"></i>
+                        <span>Details</span>
+                    </a>
                     <a href="https://aupechemignon11.fr" target="_blank" rel="noopener noreferrer" class="project-link">
                         <i data-lucide="github"></i>
                         <span>Code</span>
