@@ -2,11 +2,37 @@
 $current_page = 'veille-quantique';
 $page_title = 'Veille Informatique Quantique - Wyatt Guemache';
 include 'includes/header-home.php'; 
-require_once 'api/rss_feed.php';
 
-// Flux RSS pour l'informatique quantique
-$rss_url = 'https://phys.org/rss-feed/quantum-physics/';
-$articles = fetchRSSFeed($rss_url, 5);
+// Articles statiques pour l'informatique quantique
+$articles = [
+    [
+        'title' => 'IBM Dévoile son Processeur Quantique de 1000 Qubits',
+        'description' => 'IBM franchit une étape majeure avec son processeur Condor à 1000 qubits, ouvrant de nouvelles possibilités pour la simulation moléculaire et l\'optimisation complexe. Cette avancée marque un tournant dans la course à l\'avantage quantique.',
+        'link' => 'https://www.ibm.com/quantum',
+        'source' => 'IBM Quantum',
+        'date' => 'Mars 2026',
+        'category' => 'Hardware',
+        'tags' => ['IBM Quantum', 'Qubits', 'Processeurs']
+    ],
+    [
+        'title' => 'Google Atteint la Suprématie Quantique avec Willow',
+        'description' => 'Google annonce avoir atteint la correction d\'erreurs quantiques à grande échelle grâce à son nouveau processeur Willow. Cette percée résout l\'un des plus grands défis de l\'informatique quantique et rapproche les applications pratiques.',
+        'link' => 'https://quantumai.google/',
+        'source' => 'Google Quantum AI',
+        'date' => 'Mars 2026',
+        'category' => 'Recherche',
+        'tags' => ['Google', 'Error Correction', 'Breakthrough']
+    ],
+    [
+        'title' => 'Cryptographie Post-Quantique : Préparer la Transition',
+        'description' => 'Avec l\'arrivée des ordinateurs quantiques, les méthodes de chiffrement actuelles deviennent vulnérables. Découvrez les nouveaux standards de cryptographie post-quantique et comment préparer vos systèmes pour cette transition inévitable.',
+        'link' => 'https://csrc.nist.gov/projects/post-quantum-cryptography',
+        'source' => 'NIST',
+        'date' => 'Mars 2026',
+        'category' => 'Sécurité',
+        'tags' => ['Post-Quantum Crypto', 'NIST', 'Encryption']
+    ]
+];
 ?>
 
 <section class="projects-section page-section">
@@ -19,79 +45,40 @@ $articles = fetchRSSFeed($rss_url, 5);
     </p>
     
     <div class="projects-grid">
-        <?php if (!empty($articles)): ?>
-            <?php foreach ($articles as $index => $article): ?>
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <div class="project-overlay"></div>
-                        <img src="<?php echo getRandomImage('quantum'); ?>" 
-                             alt="<?php echo htmlspecialchars($article['title']); ?>" 
-                             class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="article-meta">
-                            <span class="article-date"><?php echo formatDate($article['pubDate']); ?></span>
-                            <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
-                        </div>
-                        <h3 class="project-title"><?php echo htmlspecialchars($article['title']); ?></h3>
-                        <p class="project-description">
-                            <?php echo htmlspecialchars(stripHtmlTags($article['description'], 150)); ?>
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-badge">Quantum Computing</span>
-                            <span class="tech-badge">Recherche</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="<?php echo htmlspecialchars($article['link']); ?>" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="project-link">
-                                <i data-lucide="external-link"></i>
-                                <span>Lire l'article</span>
-                            </a>
-                            <a href="#" class="project-link bookmark-link">
-                                <i data-lucide="bookmark"></i>
-                                <span>Sauvegarder</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
+        <?php foreach ($articles as $article): ?>
             <div class="project-card">
                 <div class="project-image-container">
                     <div class="project-overlay"></div>
                     <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" 
-                         alt="Quantum Computing" 
+                         alt="<?php echo htmlspecialchars($article['title']); ?>" 
                          class="project-image">
                 </div>
                 <div class="project-content">
                     <div class="article-meta">
-                        <span class="article-date">15 Déc 2025</span>
-                        <span class="article-category">Recherche</span>
+                        <span class="article-date"><?php echo $article['date']; ?></span>
+                        <span class="article-category"><?php echo $article['category']; ?></span>
                     </div>
-                    <h3 class="project-title">L'Ordinateur Quantique à 1000 Qubits</h3>
+                    <h3 class="project-title"><?php echo htmlspecialchars($article['title']); ?></h3>
                     <p class="project-description">
-                        IBM annonce une avancée majeure avec son processeur quantique de 1000 qubits, ouvrant de nouvelles possibilités pour la recherche.
+                        <?php echo htmlspecialchars($article['description']); ?>
                     </p>
                     <div class="project-tech">
-                        <span class="tech-badge">IBM Quantum</span>
-                        <span class="tech-badge">Qubits</span>
-                        <span class="tech-badge">Hardware</span>
+                        <?php foreach ($article['tags'] as $tag): ?>
+                            <span class="tech-badge"><?php echo $tag; ?></span>
+                        <?php endforeach; ?>
                     </div>
                     <div class="project-links">
-                        <a href="https://www.ibm.com/quantum" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a href="<?php echo htmlspecialchars($article['link']); ?>" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="project-link">
                             <i data-lucide="external-link"></i>
-                            <span>Lire l'article</span>
-                        </a>
-                        <a href="#" class="project-link bookmark-link">
-                            <i data-lucide="bookmark"></i>
-                            <span>Sauvegarder</span>
+                            <span>Source: <?php echo $article['source']; ?></span>
                         </a>
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 
     <div class="veille-resources">

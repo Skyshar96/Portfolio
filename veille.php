@@ -2,11 +2,37 @@
 $current_page = 'veille';
 $page_title = 'Veille Cyber - Wyatt Guemache';
 include 'includes/header-home.php'; 
-require_once 'api/rss_feed.php';
 
-// Flux RSS pour la cybersécurité
-$rss_url = 'https://www.bleepingcomputer.com/feed/';
-$articles = fetchRSSFeed($rss_url, 5);
+// Articles statiques pour la cybersécurité
+$articles = [
+    [
+        'title' => 'Zero Trust Architecture : Le Nouveau Paradigme de Sécurité',
+        'description' => 'Le modèle Zero Trust révolutionne la sécurité en entreprise en éliminant la confiance implicite. Découvrez comment implémenter cette architecture pour protéger vos systèmes contre les menaces modernes.',
+        'link' => 'https://www.cloudflare.com/learning/security/glossary/what-is-zero-trust/',
+        'source' => 'Cloudflare',
+        'date' => 'Mars 2026',
+        'category' => 'Architecture',
+        'tags' => ['Zero Trust', 'IAM', 'Network Security']
+    ],
+    [
+        'title' => 'Ransomware : Les Nouvelles Techniques d\'Attaque en 2026',
+        'description' => 'Les cybercriminels adoptent de nouvelles stratégies de ransomware incluant la double extortion et les attaques sur la supply chain. Analyse des menaces actuelles et bonnes pratiques de défense.',
+        'link' => 'https://www.cert.ssi.gouv.fr/',
+        'source' => 'CERT-FR',
+        'date' => 'Mars 2026',
+        'category' => 'Menaces',
+        'tags' => ['Ransomware', 'Malware', 'Incident Response']
+    ],
+    [
+        'title' => 'L\'IA Générative : Nouvelle Frontière de la Cybersécurité',
+        'description' => 'L\'intelligence artificielle transforme la cybersécurité avec la détection automatisée des menaces, mais elle présente aussi de nouveaux risques. Explorez les opportunités et les défis de l\'IA en sécurité.',
+        'link' => 'https://www.schneier.com/',
+        'source' => 'Schneier on Security',
+        'date' => 'Mars 2026',
+        'category' => 'IA & Sécurité',
+        'tags' => ['AI', 'Machine Learning', 'Threat Detection']
+    ]
+];
 ?>
 
 <section class="projects-section page-section">
@@ -19,79 +45,40 @@ $articles = fetchRSSFeed($rss_url, 5);
     </p>
     
     <div class="projects-grid">
-        <?php if (!empty($articles)): ?>
-            <?php foreach ($articles as $index => $article): ?>
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <div class="project-overlay"></div>
-                        <img src="<?php echo getRandomImage('cyber'); ?>" 
-                             alt="<?php echo htmlspecialchars($article['title']); ?>" 
-                             class="project-image">
-                    </div>
-                    <div class="project-content">
-                        <div class="article-meta">
-                            <span class="article-date"><?php echo formatDate($article['pubDate']); ?></span>
-                            <span class="article-category"><?php echo htmlspecialchars($article['category']); ?></span>
-                        </div>
-                        <h3 class="project-title"><?php echo htmlspecialchars($article['title']); ?></h3>
-                        <p class="project-description">
-                            <?php echo htmlspecialchars(stripHtmlTags($article['description'], 150)); ?>
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-badge">Cybersécurité</span>
-                            <span class="tech-badge">Actualités</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="<?php echo htmlspecialchars($article['link']); ?>" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               class="project-link">
-                                <i data-lucide="external-link"></i>
-                                <span>Lire l'article</span>
-                            </a>
-                            <a href="#" class="project-link bookmark-link">
-                                <i data-lucide="bookmark"></i>
-                                <span>Sauvegarder</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
+        <?php foreach ($articles as $article): ?>
             <div class="project-card">
                 <div class="project-image-container">
                     <div class="project-overlay"></div>
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop" 
-                         alt="Zero Trust Security" 
+                         alt="<?php echo htmlspecialchars($article['title']); ?>" 
                          class="project-image">
                 </div>
                 <div class="project-content">
                     <div class="article-meta">
-                        <span class="article-date">15 Déc 2025</span>
-                        <span class="article-category">Architecture</span>
+                        <span class="article-date"><?php echo $article['date']; ?></span>
+                        <span class="article-category"><?php echo $article['category']; ?></span>
                     </div>
-                    <h3 class="project-title">L'Architecture Zero Trust</h3>
+                    <h3 class="project-title"><?php echo htmlspecialchars($article['title']); ?></h3>
                     <p class="project-description">
-                        Comprendre les principes fondamentaux du modèle Zero Trust et son importance dans la sécurité moderne des entreprises.
+                        <?php echo htmlspecialchars($article['description']); ?>
                     </p>
                     <div class="project-tech">
-                        <span class="tech-badge">Zero Trust</span>
-                        <span class="tech-badge">IAM</span>
-                        <span class="tech-badge">Network Security</span>
+                        <?php foreach ($article['tags'] as $tag): ?>
+                            <span class="tech-badge"><?php echo $tag; ?></span>
+                        <?php endforeach; ?>
                     </div>
                     <div class="project-links">
-                        <a href="https://www.csoonline.com/article/zero-trust" target="_blank" rel="noopener noreferrer" class="project-link">
+                        <a href="<?php echo htmlspecialchars($article['link']); ?>" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="project-link">
                             <i data-lucide="external-link"></i>
-                            <span>Lire l'article</span>
-                        </a>
-                        <a href="#" class="project-link bookmark-link">
-                            <i data-lucide="bookmark"></i>
-                            <span>Sauvegarder</span>
+                            <span>Source: <?php echo $article['source']; ?></span>
                         </a>
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 
     <div class="veille-resources">

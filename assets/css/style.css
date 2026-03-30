@@ -319,6 +319,10 @@ nav {
     height: 22px;
 }
 
+.social-icon i {
+    font-size: 22px;
+}
+
 .section-title {
     font-size: 1.875rem;
     font-weight: 700;

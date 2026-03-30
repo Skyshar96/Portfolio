@@ -32,11 +32,11 @@ include 'includes/header-home.php';
             </p>
             <div class="social-links">
                 <a href="https://github.com/Skyshar96" target="_blank" rel="noopener noreferrer" class="social-icon">
-                    <i data-lucide="github"></i>
+                    <i class="fab fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/wyatt-guemache-5710a2235/" target="_blank"
                     rel="noopener noreferrer" class="social-icon">
-                    <i data-lucide="linkedin"></i>
+                    <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </div>

@@ -14,7 +14,7 @@ include 'includes/header-home.php';
             <div class="timeline-dot"></div>
             <div class="experience-header">
                 <div class="experience-company">
-                    <span class="company-logo">🎓</span>
+                    <span class="company-logo"><i data-lucide="graduation-cap"></i></span>
                     <div>
                         <h3 class="company-name">BTS SIO</h3>
                         <p class="job-title">Student</p>
@@ -31,16 +31,16 @@ include 'includes/header-home.php';
             <div class="timeline-dot"></div>
             <div class="experience-header">
                 <div class="experience-company">
-                    <span class="company-logo">🎓</span>
+                    <span class="company-logo"><i data-lucide="building"></i></span>
                     <div>
-                        <h3 class="company-name">42 Perpignan (Piscine)</h3>
-                        <p class="job-title">Candidate</p>
+                        <h3 class="company-name">Real Estate Agency</h3>
+                        <p class="job-title">Intern</p>
                     </div>
                 </div>
-                <span class="job-period">July 6 - July 31, 2026</span>
+                <span class="job-period">2024</span>
             </div>
             <p class="job-description">
-                Intensive 4-week coding bootcamp (piscine) at 42 Perpignan. Selection process pending.
+                Internship at a real estate agency during my final year of high school (Terminale).
             </p>
         </div>
 
@@ -48,33 +48,16 @@ include 'includes/header-home.php';
             <div class="timeline-dot"></div>
             <div class="experience-header">
                 <div class="experience-company">
-                    <span class="company-logo">🎓</span>
+                    <span class="company-logo"><i data-lucide="building"></i></span>
                     <div>
-                        <h3 class="company-name">42</h3>
-                        <p class="job-title">Student</p>
+                        <h3 class="company-name">Real Estate Agency</h3>
+                        <p class="job-title">Intern</p>
                     </div>
                 </div>
-                <span class="job-period">November 2024 - August 2025</span>
+                <span class="job-period">2023</span>
             </div>
             <p class="job-description">
-                Intensive coding program focusing on C, algorithms, and collaborative projects.
-            </p>
-        </div>
-
-        <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-header">
-                <div class="experience-company">
-                    <span class="company-logo">💻</span>
-                    <div>
-                        <h3 class="company-name">Freelance</h3>
-                        <p class="job-title">Web Developer</p>
-                    </div>
-                </div>
-                <span class="job-period">Coming Soon</span>
-            </div>
-            <p class="job-description">
-                Freelance projects and collaborations - Stay tuned for updates!
+                One-month internship at a real estate agency during my junior year (Première).
             </p>
         </div>
     </div>

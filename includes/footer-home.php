@@ -4,10 +4,20 @@
         </div>
     </div>
 
+    <script>
+        // Initialize Lucide icons immediately
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            lucide.createIcons();
+        }
+    </script>
     <script src="assets/js/script.js"></script>
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // Re-initialize Lucide icons after DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 </html>

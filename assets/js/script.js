@@ -79,14 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'experience.title': 'Expérience',
             'experience.jobStudent': 'Étudiant',
-            'experience.jobCandidate': 'Candidat',
+            'experience.jobCandidate': 'Stagiaire',
             'experience.jobWebDeveloper': 'Développeur Web',
-            'experience.piscinePeriod': '6 juillet - 31 juillet 2026',
             'experience.soon': 'Bientôt',
             'experience.desc1': 'BTS Services Informatiques aux Organisations - spécialisation développement logiciel et infrastructure IT.',
-            'experience.desc2': 'Bootcamp de code intensif de 4 semaines (piscine) à 42 Perpignan. Processus de sélection en cours.',
-            'experience.desc3': 'Programme intensif de code axé sur le C, les algorithmes et les projets collaboratifs.',
-            'experience.desc4': 'Projets freelance et collaborations - restez à l\'écoute pour les mises à jour.',
+            'experience.desc2': 'Stage d\'un mois en agence immobilière durant ma terminale.',
+            'experience.desc3': 'Stage d\'un mois en agence immobilière durant ma première.',
+            'experience.companyRealEstate': 'Agence Immobilière',
             'experience.skillsTitle': 'Compétences & Technologies',
             'experience.tools': 'Outils & Autres',
 
@@ -219,14 +218,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             'experience.title': 'Experience',
             'experience.jobStudent': 'Student',
-            'experience.jobCandidate': 'Candidate',
+            'experience.jobCandidate': 'Intern',
             'experience.jobWebDeveloper': 'Web Developer',
-            'experience.piscinePeriod': 'July 6 - July 31, 2026',
-            'experience.soon': 'Coming Soon',
             'experience.desc1': 'BTS Services Informatiques aux Organisations - Specializing in software development and IT infrastructure.',
-            'experience.desc2': 'Intensive 4-week coding bootcamp (piscine) at 42 Perpignan. Selection process pending.',
-            'experience.desc3': 'Intensive coding program focusing on C, algorithms, and collaborative projects.',
-            'experience.desc4': 'Freelance projects and collaborations - Stay tuned for updates!',
+            'experience.desc2': 'One-month internship at a real estate agency during my final year of high school (Terminale).',
+            'experience.desc3': 'One-month internship at a real estate agency during my junior year (Première).',
+            'experience.companyRealEstate': 'Real Estate Agency',
             'experience.skillsTitle': 'Skills & Technologies',
             'experience.tools': 'Tools & Others',
 
@@ -304,8 +301,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: '.experience-section .section-title', key: 'experience.title', preserveChildren: true, whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(1) .job-title', key: 'experience.jobStudent', whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(2) .job-title', key: 'experience.jobCandidate', whenPath: 'experience.php' },
-        { selector: '.experience-item:nth-of-type(3) .job-title', key: 'experience.jobStudent', whenPath: 'experience.php' },
+        { selector: '.experience-item:nth-of-type(3) .job-title', key: 'experience.jobCandidate', whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(4) .job-title', key: 'experience.jobWebDeveloper', whenPath: 'experience.php' },
+        { selector: '.experience-item:nth-of-type(2) .company-name', key: 'experience.companyRealEstate', whenPath: 'experience.php' },
+        { selector: '.experience-item:nth-of-type(3) .company-name', key: 'experience.companyRealEstate', whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(2) .job-period', key: 'experience.piscinePeriod', whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(4) .job-period', key: 'experience.soon', whenPath: 'experience.php' },
         { selector: '.experience-item:nth-of-type(1) .job-description', key: 'experience.desc1', whenPath: 'experience.php' },
@@ -525,11 +524,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const langToggle = document.getElementById('langToggle');
         if (langToggle) {
-            langToggle.textContent = currentLang === 'en' ? 'fr FR' : 'us EN';
+            langToggle.textContent = currentLang === 'en' ? 'us EN' : 'fr FR';
         }
 
         document.documentElement.lang = currentLang;
         localStorage.setItem('portfolio-lang', currentLang);
+        
+        // Re-initialize all Lucide icons after translation
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
     }
 
     const navLinks = document.querySelectorAll('.nav-link');
