@@ -13,7 +13,7 @@ include 'includes/header-home.php';
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
-                 <img src="assets/image/Logo_Mediaphone.png"
+                 <img src="assets/image/projects/mediaphone/logo.png"
                      alt="Mediaphone"
                      class="project-image project-image-contained">
             </div>
@@ -50,8 +50,8 @@ include 'includes/header-home.php';
         <div class="project-card">
             <div class="project-image-container">
                 <div class="project-overlay"></div>
-                 <img src="assets/image/baguette-logo.svg" 
-                     alt="Au PecheMignon" 
+                 <img src="assets/image/projects/aupechemignon/logo.svg"
+                     alt="Au PecheMignon"
                      class="project-image project-image-contained">
             </div>
             <div class="project-content">

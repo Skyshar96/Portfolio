@@ -35,6 +35,10 @@
                     <a href="contact.php" class="nav-link <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">Contact</a>
                 </nav>
                 <div class="header-actions">
+                    <a href="assets/pdf/EpreuveE5.pdf" target="_blank" rel="noopener noreferrer" class="cv-btn">
+                        <i data-lucide="file-text"></i>
+                        <span>CV</span>
+                    </a>
                     <button class="lang-toggle" id="langToggle">us EN</button>
                 </div>
             </header>

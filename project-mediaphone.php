@@ -18,20 +18,34 @@ include 'includes/header-home.php';
             </p>
 
             <h3 class="project-title">Aperçu du projet</h3>
-            <div class="project-gallery">
-                <!-- Vous pouvez ajouter vos screenshots ici -->
-                <!-- Exemple:
-                <div class="project-gallery-item">
-                    <img src="assets/image/screenshots/mediaphone-home.png" alt="Page d'accueil Mediaphone">
+            <?php
+                $imgDir = 'assets/image/projects/mediaphone/';
+                $images = glob($imgDir . '*.{png,jpg,jpeg,gif,webp,svg}', GLOB_BRACE);
+                $images = array_filter($images, fn($f) => strtolower(basename($f)) !== 'logo.png' && strtolower(basename($f)) !== 'logo.svg');
+                $images = array_values($images);
+            ?>
+            <?php if (!empty($images)): ?>
+            <div class="project-carousel" data-carousel>
+                <div class="carousel-main">
+                    <button class="carousel-btn prev" aria-label="Précédent">&#8249;</button>
+                    <img src="<?= htmlspecialchars($images[0]) ?>" alt="<?= htmlspecialchars(pathinfo($images[0], PATHINFO_FILENAME)) ?>">
+                    <button class="carousel-btn next" aria-label="Suivant">&#8250;</button>
+                    <span class="carousel-counter">1 / <?= count($images) ?></span>
                 </div>
-                <div class="project-gallery-item">
-                    <img src="assets/image/screenshots/mediaphone-services.png" alt="Page services Mediaphone">
+                <?php if (count($images) > 1): ?>
+                <div class="carousel-thumbs">
+                    <?php foreach ($images as $i => $img): ?>
+                    <img class="carousel-thumb <?= $i === 0 ? 'active' : '' ?>"
+                         src="<?= htmlspecialchars($img) ?>"
+                         alt="<?= htmlspecialchars(pathinfo($img, PATHINFO_FILENAME)) ?>"
+                         data-index="<?= $i ?>">
+                    <?php endforeach; ?>
                 </div>
-                <div class="project-gallery-item">
-                    <img src="assets/image/screenshots/mediaphone-contact.png" alt="Page contact Mediaphone">
-                </div>
-                -->
+                <?php endif; ?>
             </div>
+            <?php else: ?>
+            <p class="project-description">Aucune image disponible pour le moment.</p>
+            <?php endif; ?>
 
             <h3 class="project-title">Stack Technique</h3>
             <div class="project-tech">

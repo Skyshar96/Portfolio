@@ -678,9 +678,93 @@ document.addEventListener('DOMContentLoaded', function() {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-0.5rem) scale(1.02)';
         });
-        
+
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Carousel + Lightbox
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+        const mainImg = carousel.querySelector('.carousel-main img');
+        const counter = carousel.querySelector('.carousel-counter');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        const thumbs = Array.from(carousel.querySelectorAll('.carousel-thumb'));
+        const images = thumbs.length
+            ? thumbs.map(t => ({ src: t.src, alt: t.alt }))
+            : [{ src: mainImg.src, alt: mainImg.alt }];
+        let current = 0;
+
+        function goTo(index) {
+            current = index;
+            mainImg.classList.add('fade');
+            setTimeout(() => {
+                mainImg.src = images[current].src;
+                mainImg.alt = images[current].alt;
+                mainImg.classList.remove('fade');
+            }, 150);
+            if (counter) counter.textContent = `${current + 1} / ${images.length}`;
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+            if (prevBtn) prevBtn.disabled = current === 0;
+            if (nextBtn) nextBtn.disabled = current === images.length - 1;
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+        thumbs.forEach((t, i) => t.addEventListener('click', () => goTo(i)));
+        goTo(0);
+
+        // Lightbox au clic sur l'image principale
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `
+            <button class="lightbox-close" aria-label="Fermer">&times;</button>
+            <button class="lightbox-nav prev" aria-label="Précédent">&#8249;</button>
+            <div class="lightbox-content">
+                <img class="lightbox-img" src="" alt="">
+                <p class="lightbox-caption"></p>
+                <span class="lightbox-counter"></span>
+            </div>
+            <button class="lightbox-nav next" aria-label="Suivant">&#8250;</button>
+        `;
+        document.body.appendChild(overlay);
+
+        const lbImg = overlay.querySelector('.lightbox-img');
+        const lbCaption = overlay.querySelector('.lightbox-caption');
+        const lbCounter = overlay.querySelector('.lightbox-counter');
+        const lbPrev = overlay.querySelector('.lightbox-nav.prev');
+        const lbNext = overlay.querySelector('.lightbox-nav.next');
+
+        function openLightbox(index) {
+            current = index;
+            lbImg.src = images[current].src;
+            lbImg.alt = images[current].alt;
+            lbCaption.textContent = images[current].alt;
+            lbCounter.textContent = `${current + 1} / ${images.length}`;
+            lbPrev.disabled = current === 0;
+            lbNext.disabled = current === images.length - 1;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            goTo(current);
+        }
+
+        carousel.querySelector('.carousel-main').addEventListener('click', () => openLightbox(current));
+        lbPrev.addEventListener('click', (e) => { e.stopPropagation(); openLightbox(current - 1); });
+        lbNext.addEventListener('click', (e) => { e.stopPropagation(); openLightbox(current + 1); });
+        overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (!overlay.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft' && current > 0) openLightbox(current - 1);
+            if (e.key === 'ArrowRight' && current < images.length - 1) openLightbox(current + 1);
         });
     });
 
