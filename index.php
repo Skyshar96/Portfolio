@@ -8,7 +8,6 @@ include 'includes/header-home.php';
     <div class="hero-content">
         <div class="profile-container">
             <div class="profile-gradient"></div>
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Profile" class="profile-image">
         </div>
         <div class="hero-text">
             <h1 class="hero-title">Wyatt Guemache</h1>
